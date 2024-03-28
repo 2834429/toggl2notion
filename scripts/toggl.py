@@ -51,6 +51,7 @@ def insert_to_notion():
     response = requests.get(
         "https://api.track.toggl.com/api/v9/me/time_entries", params=params, auth=auth
     )
+    print(response.text)
     time_entries = response.json()
     time_entries.sort(key=lambda x: x["start"], reverse=False)
 
